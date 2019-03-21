@@ -1,0 +1,58 @@
+﻿@model MyRewards.Models.RefreshToken
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>RefreshToken</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Subject)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Subject)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClientId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClientId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IssuedUtc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IssuedUtc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExpiresUtc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExpiresUtc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProtectedTicket)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProtectedTicket)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

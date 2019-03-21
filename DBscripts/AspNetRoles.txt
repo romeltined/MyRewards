@@ -1,0 +1,5 @@
+SET IDENTITY_INSERT [dbo].[AspNetRoles] ON
+INSERT INTO [dbo].[AspNetRoles] ([Id], [Description], [Name], [Discriminator]) VALUES (1, N'Admin', N'Admin', N'ApplicationRole')
+INSERT INTO [dbo].[AspNetRoles] ([Id], [Description], [Name], [Discriminator]) VALUES (2, N'MerchantAdmin', N'MerchantAdmin', N'ApplicationRole')
+INSERT INTO [dbo].[AspNetRoles] ([Id], [Description], [Name], [Discriminator]) VALUES (3, N'User', N'User', N'User')
+SET IDENTITY_INSERT [dbo].[AspNetRoles] OFF

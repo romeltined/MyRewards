@@ -1,0 +1,111 @@
+﻿@model IEnumerable<MyRewards.Models.Voucher>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Guid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sender_Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Receiver_Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ActionType_Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SpendFlag)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpdatedOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Expiry)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SettleFlag)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SettledOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Order_Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VoucherOrder_Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Merchant_Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VoucherSpend_Id)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Guid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sender_Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Receiver_Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActionType_Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SpendFlag)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UpdatedOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Expiry)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SettleFlag)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SettledOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Order_Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VoucherOrder_Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Merchant_Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VoucherSpend_Id)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

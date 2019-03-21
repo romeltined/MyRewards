@@ -1,0 +1,35 @@
+﻿@model List<MyRewards.Models.QRCodeModel>
+
+@{
+    ViewBag.Title = "QRCode";
+}
+
+<h2>QRCode</h2>
+<table class="table-condensed">
+    <tr>
+        <th>QR Code</th>
+        <th>Plain text</th>
+    </tr>
+    @foreach (var m in Model)
+    {
+        <tr>
+            <td>
+                @{
+                    string imageBase64 = Convert.ToBase64String(m.QRCode);
+                    string imageSrc = string.Format("data:image/gif;base64,{0}", imageBase64);
+                    <img src="@imageSrc" width="200" height="200" />
+
+                }
+            </td>
+            <td>
+                <p>Merchant: @m.Merchant</p>
+                <p>Staff: @m.Staff</p>
+                <p>Phone: @m.PhoneNumber</p>
+            </td>
+        </tr>
+      }
+</table>
+<div>
+    @Html.ActionLink("Back to details", "../Merchants/Details/")
+</div>
+

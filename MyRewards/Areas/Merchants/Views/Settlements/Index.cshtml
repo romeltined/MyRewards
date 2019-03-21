@@ -1,0 +1,55 @@
+﻿@model IEnumerable<MyRewards.Models.Settlement>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Merchant_Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MerchantName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Count)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Total)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SettledOn)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Merchant_Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MerchantName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Count)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Total)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SettledOn)
+        </td>
+        <td>
+            @Html.ActionLink("Vouchers", "../Vouchers/Index", new { settledOn=item.SettledOn })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,4 @@
+SET IDENTITY_INSERT [dbo].[VoucherTypes] ON
+INSERT INTO [dbo].[VoucherTypes] ([Id], [Name], [Description], [Amount]) VALUES (1, N'MyRewards', N'$10 MyRewards', CAST(10.00 AS Decimal(18, 2)))
+INSERT INTO [dbo].[VoucherTypes] ([Id], [Name], [Description], [Amount]) VALUES (2, N'MyRewards', N'$20 Cheeky', CAST(20.00 AS Decimal(18, 2)))
+SET IDENTITY_INSERT [dbo].[VoucherTypes] OFF

@@ -1,0 +1,109 @@
+﻿@model MyRewards.Models.Merchant
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Merchant</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Guid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Guid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+    </dl>
+
+</div>
+
+<div class="form-group">
+    <div>
+        <label class="col-md-2 control-label">
+            Staffs
+        </label>
+        <table class="table">
+            <tr>
+                <th>Name</th>
+                <th>PhoneNumber</th>
+                <th>Block</th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model.Staffs)
+        {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.PhoneNumber</td>
+                    <td>@item.Block</td>
+                    <td>
+                        @Html.ActionLink("Delete", "../Staffs/Delete", new { id = item.Id, merchantId = Model.Id }) | 
+                        @Html.ActionLink("Edit", "../Staffs/Edit", new { id = item.Id, merchantId = Model.Id })
+                    </td>
+                </tr>
+            }
+
+
+        </table>
+
+        
+
+    </div>
+</div>
+
+
+<div class="form-group">
+    <div>
+        <label class="col-md-2 control-label">
+            Managers
+        </label>
+        <table class="table">
+            <tr>
+                <th>Username</th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model.Managers)
+            {
+                <tr>
+                    <td>@item.Username</td>
+                    <td>@Html.ActionLink("Delete", "../Managers/Delete", new { id = item.Id, merchantId = Model.Id })</td>
+                </tr>
+            }
+        </table>
+
+
+
+    </div>
+</div>
+
+<div>
+    <p>
+        @Html.ActionLink("Add staff", "../Staffs/Create") |
+        @Html.ActionLink("Add manager", "../Managers/Create") |
+        @Html.ActionLink("QR Code", "QRCode") 
+    </p>
+</div>
+
+

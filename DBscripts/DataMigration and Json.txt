@@ -1,0 +1,33 @@
+{
+  "Id": 1,
+  "User_Id": 0,
+  "Content": "[{\"MerchantStaff\":{\"MerchantGuid\":\"dsklkl9321312\",\"MerchantName\":\"Fairy45 price\",\"StaffGuid\":\"lkjsadoi098\"},\"VoucherList\":[{\"VoucherType\":{\"Id\":1,\"Name\":\"MyRewards\",\"Description\":\"$10 Party now\",\"Amount\":10.0},\"Count\":3},{\"VoucherType\":{\"Id\":2,\"Name\":\"MyRewards\",\"Description\":\"$20 Party now\",\"Amount\":20.0},\"Count\":3}]}]",
+  "CreatedOn": "2018-08-08T00:00:00"
+}
+
+INSERT INTO [dbo].[Clients] ([Id], [Secret], [Name], [ApplicationType], [Active], [RefreshTokenLifeTime], [AllowedOrigin]) VALUES (N'ngAuthApp', N'3FBE649C43B7DD43A3D9CD778B8AB702DBD99B2D275B9A4844949AD453200CB3', N'ngAuthApp', 0, 1, 7200, NULL)
+
+
+SET IDENTITY_INSERT [dbo].[AspNetRoles] ON
+INSERT INTO [dbo].[AspNetRoles] ([Id], [Description], [Name], [Discriminator]) VALUES (1, N'Admin', N'Admin', N'ApplicationRole')
+INSERT INTO [dbo].[AspNetRoles] ([Id], [Description], [Name], [Discriminator]) VALUES (2, N'MerchantAdmin', N'MerchantAdmin', N'ApplicationRole')
+INSERT INTO [dbo].[AspNetRoles] ([Id], [Description], [Name], [Discriminator]) VALUES (3, N'User', N'User', N'ApplicationRole')
+SET IDENTITY_INSERT [dbo].[AspNetRoles] OFF
+
+
+SET IDENTITY_INSERT [dbo].[AspNetUsers] ON
+INSERT INTO [dbo].[AspNetUsers] ([Id], [FirstName], [LastName], [Address], [City], [State], [PostalCode], [Email], [EmailConfirmed], [PasswordHash], [SecurityStamp], [PhoneNumber], [PhoneNumberConfirmed], [TwoFactorEnabled], [LockoutEndDateUtc], [LockoutEnabled], [AccessFailedCount], [UserName], [Merchant_Id]) VALUES (1, N'Romel', N'Tined', N'imus', N'cavite', N'phile', N'4103', N'a@a.com', 1, N'AFt/9aV87WFKp7ScF5Pyv8AIRqcP2yyp9z9v3XJCs+Dzh0XiBCViIxiajiDNE92iuQ==', N'1d9a5319-39c8-424c-8a8d-2a94c3eca0ac', NULL, 0, 0, NULL, 1, 0, N'a@a.com', NULL)
+INSERT INTO [dbo].[AspNetUsers] ([Id], [FirstName], [LastName], [Address], [City], [State], [PostalCode], [Email], [EmailConfirmed], [PasswordHash], [SecurityStamp], [PhoneNumber], [PhoneNumberConfirmed], [TwoFactorEnabled], [LockoutEndDateUtc], [LockoutEnabled], [AccessFailedCount], [UserName], [Merchant_Id]) VALUES (2, N'mariel', N'bautista', N'san mateo', N'rizal', N'phi', N'8088', N'b@b.com', 1, N'ACW9bc+z9P7YZcHS5S8GRdp0muRZmOZcH3uv7RmpiOy3p0yzbX3oQoq7UwYXjkmIoA==', N'c7830cc4-e1c4-434a-bc39-93b3b9d7920f', NULL, 0, 0, NULL, 1, 0, N'b@b.com', NULL)
+SET IDENTITY_INSERT [dbo].[AspNetUsers] OFF
+
+
+SET IDENTITY_INSERT [dbo].[VoucherTypes] ON
+INSERT INTO [dbo].[VoucherTypes] ([Id], [Name], [Description], [Amount]) VALUES (1, N'MyRewards', N'$10 MyRewards', CAST(10.00 AS Decimal(18, 2)))
+INSERT INTO [dbo].[VoucherTypes] ([Id], [Name], [Description], [Amount]) VALUES (2, N'MyRewards', N'$20 Cheeky', CAST(20.00 AS Decimal(18, 2)))
+SET IDENTITY_INSERT [dbo].[VoucherTypes] OFF
+
+
+SET IDENTITY_INSERT [dbo].[Merchants] ON
+INSERT INTO [dbo].[Merchants] ([Id], [Guid], [Name], [Description]) VALUES (1, N'3a92cdb8-c59f-4820-ac21-0f1771220dfe', N'FairPrice Ang mo kio2', N'near')
+INSERT INTO [dbo].[Merchants] ([Id], [Guid], [Name], [Description]) VALUES (2, N'635e19d7-85c6-42b3-a72f-7bc761745049', N'Cold Storage', N'cold here!')
+SET IDENTITY_INSERT [dbo].[Merchants] OFF
